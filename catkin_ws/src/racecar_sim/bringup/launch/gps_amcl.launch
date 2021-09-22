@@ -14,31 +14,27 @@
 		<param name="base_frame_id" value="base_footprint"/>
 		<param name="initial_pose_x"            value="0.0"/>
 		<param name="initial_pose_y"            value="0.0"/>
-		<param name="initial_pose_a"            value="-0.657"/>
+		<param name="initial_pose_a"            value="0.0"/>
 		<param name="initial_cov_xx"            value="0.001"/>
 		<param name="initial_cov_yy"            value="0.001"/>
 		<param name="initial_cov_aa"            value="0.001"/>
-		<param name="gps_topic"            value="/"/>
+		<param name="gps_topic"            value="/pixhawk_gps_t"/>
 	</node>
 
 
 	<!--  ****** PCL TO LASERSCAN *****  -->
-	<node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan" output="screen">
-		<param name="range_min" value="0.1" />
-		<param name="range_max" value="8.0" />
+	<!--node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan" output="screen">
+		<param name="range_min" value="0.3" />
+		<param name="range_max" value="25" />
 		<param name="min_height" value="0.0" />
-		<param name="max_height" value="0,05" />
+		<param name="max_height" value="2.0" />
 		<param name="angle_min" value="-3.1416" />
 		<param name="angle_max" value="3.1416" />
-	        <remap from="/cloud_in" to="/scan"/>
-		<param name="target_frame" value="$(arg base_frame_id)"/>
-	</node>
+	    <remap from="/cloud_in" to="/kitti/velo/pointcloud" />
+		<param name="target_frame" value="velo_link" />
+	</node-->
 
-	<!-- Static map for GPS AMCL  -->
-	<node name="map_server" pkg="map_server" type="map_server" args="$(find bringup)/map/mymap.yaml" output="log">
-		<param name="frame_id" value="map"/>
-	</node>
-
+	
 	<!-- Odometry source -->
 	<node pkg="gps_amcl" type="odometry_transform.py" name="odometry_source" output="log">
 	  <param name="send_tf" value="True"/>
@@ -48,7 +44,7 @@
 	  <param name="loam_active" value="False"/>
 	  <param name="input_type" value="0"/>
 	  <!--param name="input_topic" value="/laser_odom_to_init"/-->
-	  <param name="input_topic" value="/odom"/>
+	  <param name="input_topic" value="/odometry_gt"/>
 	  <param name="output_topic" value="/lidar_odometry"/>
 	  <param name="tf_parent" value="odom"/>
 	  <param name="tf_child" value="base_footprint"/>
@@ -65,7 +61,7 @@
 	  <param name="first_z" value="379.63"/-->
 	  <param name="loam_active" value="False"/>
 	  <param name="input_type" value="0"/>
-	  <param name="input_topic" value="/odom"/>
+	  <param name="input_topic" value="/odometry_gt"/>
 	  <param name="output_topic" value="/pixhawk_gps_t"/>
 	  <param name="tf_parent" value="map"/>
 	  <param name="tf_child" value="map"/>
@@ -98,19 +94,18 @@
 	  <param name="input_topic" value="gps_odometry"/>
 	  <param name="output_topic" value="odometry_gt"/>
 	  <param name="tf_parent" value="map"/>
-	  <param name="tf_child" value="velo_link"/>
+	  <param name="tf_child" value="lidar_link"/>
 	</node>
 
 
 	<node pkg="gps_common" type="utm_odometry_node" name="utm_odometry_node">
       <param name="rot_covariance" value="0.001" />
       <param name="frame_id" value="map" />
-      <param name="child_frame_id" value="base_link" />
+      <param name="child_frame_id" value="base_footprint" />
 
-      <remap from="fix" to="/kitti/oxts/gps/fix"/>
+      <remap from="fix" to="/fix"/>
       <remap from="odom" to="gps_odometry"/>
   	</node>
 
-  	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find gps_amcl)/cfg/gps_amcl.rviz" />
 	
 </launch>
