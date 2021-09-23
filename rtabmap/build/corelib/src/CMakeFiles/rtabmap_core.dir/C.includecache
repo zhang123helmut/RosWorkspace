@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pc25et/RosWorkspace/rtabmap/corelib/src/rtflann/ext/lz4.c
+lz4.h
+/home/pc25et/RosWorkspace/rtabmap/corelib/src/rtflann/ext/lz4.h
+intrin.h
+-
+stdlib.h
+-
+string.h
+-
+stdint.h
+-
+
+/home/pc25et/RosWorkspace/rtabmap/corelib/src/rtflann/ext/lz4.h
+
+/home/pc25et/RosWorkspace/rtabmap/corelib/src/rtflann/ext/lz4hc.c
+lz4hc.h
+/home/pc25et/RosWorkspace/rtabmap/corelib/src/rtflann/ext/lz4hc.h
+lz4.c
+/home/pc25et/RosWorkspace/rtabmap/corelib/src/rtflann/ext/lz4.c
+
+/home/pc25et/RosWorkspace/rtabmap/corelib/src/rtflann/ext/lz4hc.h
+stddef.h
+-
+

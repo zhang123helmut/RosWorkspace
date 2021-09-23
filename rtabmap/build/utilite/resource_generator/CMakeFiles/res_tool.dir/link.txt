@@ -1,0 +1,1 @@
+/usr/bin/c++   -fmessage-length=0  -fopenmp -std=c++14 -O3 -DNDEBUG    CMakeFiles/res_tool.dir/main.cpp.o  -o ../../../bin/rtabmap-res_tool-0.3.0  -Wl,-rpath,/home/pc25et/RosWorkspace/rtabmap/bin: ../../../bin/librtabmap_utilite.so.0.20.13 /usr/lib/x86_64-linux-gnu/libpthread.so 

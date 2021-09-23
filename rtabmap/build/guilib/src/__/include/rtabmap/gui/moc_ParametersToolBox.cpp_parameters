@@ -1,0 +1,15 @@
+-I/usr/include
+-I/usr/include/vtk-7.1
+-I/usr/include/freetype2
+-I/usr/include
+-I/usr/include/x86_64-linux-gnu
+-I/usr/include
+-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)
+-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)
+-Dqh_QHpointer
+-DPCL_OMP
+-DVTK_OPENGL2
+-DQT_NO_KEYWORDS
+-o
+/home/pc25et/RosWorkspace/rtabmap/build/guilib/src/__/include/rtabmap/gui/moc_ParametersToolBox.cpp
+/home/pc25et/RosWorkspace/rtabmap/guilib/include/rtabmap/gui/ParametersToolBox.h
