@@ -1,0 +1,12 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/qiu/Workspace/RosWorkspace/ws_gnss_f9p/devel/lib/python3/dist-packages",
+        "/home/qiu/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/qiu/Workspace/RosWorkspace/ws_gnss_f9p/devel/lib/python3/dist-packages",
+        "/home/qiu/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

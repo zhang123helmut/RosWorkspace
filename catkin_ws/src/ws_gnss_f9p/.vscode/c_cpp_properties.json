@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/qiu/Workspace/RosWorkspace/ws_gnss_f9p/devel/include/**",
+        "/home/qiu/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/qiu/catkin_ws/src/beginner_tutorials/include/**",
+        "/home/qiu/Workspace/RosWorkspace/ws_gnss_f9p/src/rtkrcv_ros/rtkrcv_ros/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
