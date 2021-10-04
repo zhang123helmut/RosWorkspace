@@ -14,7 +14,7 @@
   <arg name="map_file" default="$(find bringup)/map/mymap_1.yaml"/>
   <arg name="open_rviz" default="true"/>
 
-  <arg name="world_file" default="$(find racecar_description)/worlds/parkplatz_03.world"/>
+  <arg name="world_file" default="$(find racecar_description)/worlds/parkplatz_04.world"/>
  
         <!--运行gazebo仿真环境-->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -26,7 +26,7 @@
 	</include>
 	
   <!-- 加载机器人模型描述参数 -->
-  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find racecar_description)/urdf/racecar_1.urdf.xacro'"/>
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find racecar_description)/urdf/lastenpedelec.urdf.xacro'"/>
 
   <!--运行joint_state_publisher节点，发布机器人关节状态-->
   <!--<node name = "robot_state_publisher" pkg = "robot_state_publisher" type = "state_publisher">-->
